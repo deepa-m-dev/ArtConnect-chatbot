@@ -4,7 +4,7 @@ import random
 app = Flask(__name__)
 CORS(app)
 
-@app.route('/chat', methods=['POST'])
+@app.route('/chat', methods=['POST', 'OPTIONS'])
 def chat():
     user_msg = request.json.get("message").lower()
 
