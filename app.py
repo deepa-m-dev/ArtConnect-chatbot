@@ -71,6 +71,9 @@ def chat():
     elif "i dont know" in user_msg:
         response = "That’s okay 🙂 Relaxing or exciting?"
 
+    elif any(word in user_msg for word in ["who created you", "who made you", "who developed you", "your creator"]):
+        response = "I was created by Deepa M for the ArtConnect project."
+
     # ===== SYSTEM =====
     elif "what can you do" in user_msg:
         response = "I suggest art based on mood, style, and preferences 🎨"
@@ -87,11 +90,26 @@ def chat():
     elif "how to use" in user_msg:
         response = "Browse gallery, explore styles, or upload your own art. I’m here if you need help 😊"
 
-    elif "buy" in user_msg:
-        response = "Looking to buy art? Explore the gallery and pick what connects with you 💸"
+    elif "add to cart" in user_msg:
+        response = "In the Buyer section, click 'Add to Cart' below any artwork."
+
+    elif "remove from cart" in user_msg:
+        response = "Scroll to the bottom cart section and click remove on the item."
+
+    elif "view cart" in user_msg or "cart items" in user_msg:
+        response = "Scroll down in the Buyer module to see all selected cart items."
+
+    elif "buy" in user_msg or "purchase" in user_msg:
+        response = "Currently, you can add items to cart. Payment feature will be added in future."
 
     elif "upload" in user_msg:
         response = "You can upload your artwork from the artist dashboard 🎨"
+
+    elif "about" in user_msg:
+        response = "The About section explains the purpose and features of ArtConnect."
+
+    elif "contact" in user_msg:
+        response = "Use the Contact page to reach out for support or queries."
 
     elif "which one is better" in user_msg:
         response = "Hard to say — it depends on your taste. Do you prefer calm or bold styles?"
